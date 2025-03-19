@@ -115,6 +115,7 @@ public class Main extends Application {
   public void start(Stage stage) throws IOException {
     // Load UI elements if we're not in headless mode
     if (!headless) {
+      System.setProperty("javafx.allowjs", "true");
       root = FXMLLoader.load(Main.class.getResource("MainWindow.fxml"), null, null,
           injector::getInstance);
       root.setStyle("-fx-font-size: " + DPIUtility.FONT_SIZE + "px");
