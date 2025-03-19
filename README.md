@@ -2,8 +2,8 @@
 I'm working on another project where I'm using opencv and I wanted a program that lets me try opencv functions before I spend time writing code. I remembered GRIP exists from when I used it in highschool robotics but trying to run it in 2025 on a Fedora + Wayland system just doesn't work.   
 
 ## Goals for this fork
-[ ] Solve broken dependencies
-[ ] Create `.rpm` so I can use this on Fedora easier
+- [ ] Solve broken dependencies
+- [ ] Create `.rpm` so I can use this on Fedora easier
 
 ![logo](https://cloud.githubusercontent.com/assets/3964980/11156885/6fa1967a-8a1c-11e5-8c78-e552ffba31c0.png)
 
