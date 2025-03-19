@@ -6,7 +6,7 @@ import edu.wpi.grip.core.sources.ClassifierSource;
 import edu.wpi.grip.core.sources.HttpSource;
 import edu.wpi.grip.core.sources.ImageFileSource;
 import edu.wpi.grip.core.sources.MultiImageFileSource;
-import edu.wpi.grip.core.sources.NetworkTableEntrySource;
+//import edu.wpi.grip.core.sources.NetworkTableEntrySource;
 import edu.wpi.grip.core.util.ExceptionWitness;
 
 import com.google.common.base.MoreObjects;
@@ -121,8 +121,8 @@ public abstract class Source {
     MultiImageFileSource.Factory multiImageFactory;
     @Inject
     HttpSource.Factory httpFactory;
-    @Inject
-    NetworkTableEntrySource.Factory networkTableEntryFactory;
+    //@Inject
+    //NetworkTableEntrySource.Factory networkTableEntryFactory;
     @Inject
     ClassifierSource.Factory fileSourceFactory;
 
@@ -136,8 +136,6 @@ public abstract class Source {
         return multiImageFactory.create(properties);
       } else if (type.isAssignableFrom(HttpSource.class)) {
         return httpFactory.create(properties);
-      } else if (type.isAssignableFrom(NetworkTableEntrySource.class)) {
-        return networkTableEntryFactory.create(properties);
       } else if (type.isAssignableFrom(ClassifierSource.class)) {
         return fileSourceFactory.create(properties);
       } else {

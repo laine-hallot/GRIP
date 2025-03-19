@@ -8,7 +8,6 @@ import edu.wpi.grip.core.sources.ClassifierSource;
 import edu.wpi.grip.core.sources.HttpSource;
 import edu.wpi.grip.core.sources.ImageFileSource;
 import edu.wpi.grip.core.sources.MultiImageFileSource;
-import edu.wpi.grip.core.sources.NetworkTableEntrySource;
 import edu.wpi.grip.ui.util.DPIUtility;
 import edu.wpi.grip.ui.util.SupplierWithIO;
 
@@ -64,7 +63,6 @@ public class AddSourceButton extends MenuButton {
   private final MenuItem webcamButton;
   private final MenuItem ipcamButton;
   private final MenuItem httpButton;
-  private final MenuItem networktablesButton;
   private final MenuItem classifierButton;
   private Optional<Dialog> activeDialog = Optional.empty();
 
@@ -74,7 +72,6 @@ public class AddSourceButton extends MenuButton {
                   ImageFileSource.Factory imageSourceFactory,
                   CameraSource.Factory cameraSourceFactory,
                   HttpSource.Factory httpSourceFactory,
-                  NetworkTableEntrySource.Factory networkTableSourceFactory,
                   ClassifierSource.Factory classifierSourceFactory) {
     super("Add Source");
     this.eventBus = eventBus;
@@ -223,7 +220,7 @@ public class AddSourceButton extends MenuButton {
               });
         });
 
-    networktablesButton = addMenuItem("NetworkTable",
+    /* networktablesButton = addMenuItem("NetworkTable",
         getClass().getResource("/edu/wpi/grip/ui/icons/publish.png"), mouseEvent -> {
           final Parent root = this.getScene().getRoot();
           // Show a dialog to pick the server path images will be uploaded on
@@ -261,7 +258,7 @@ public class AddSourceButton extends MenuButton {
                 networkTableEntrySource.initialize();
                 eventBus.post(new SourceAddedEvent(networkTableEntrySource));
               });
-        });
+        }); */
 
     classifierButton = addMenuItem("Classifier file",
         getClass().getResource("/edu/wpi/grip/ui/icons/add-image.png"),
@@ -330,11 +327,6 @@ public class AddSourceButton extends MenuButton {
   @VisibleForTesting
   MenuItem getHttpButton() {
     return httpButton;
-  }
-
-  @VisibleForTesting
-  MenuItem getNetworktablesButton() {
-    return networktablesButton;
   }
 
   @VisibleForTesting

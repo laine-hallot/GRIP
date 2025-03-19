@@ -15,7 +15,7 @@ import edu.wpi.grip.core.sources.ClassifierSource;
 import edu.wpi.grip.core.sources.HttpSource;
 import edu.wpi.grip.core.sources.ImageFileSource;
 import edu.wpi.grip.core.sources.MultiImageFileSource;
-import edu.wpi.grip.core.sources.NetworkTableEntrySource;
+//import edu.wpi.grip.core.sources.NetworkTableEntrySource;
 import edu.wpi.grip.core.util.ExceptionWitness;
 import edu.wpi.grip.core.util.GripMode;
 
@@ -151,9 +151,9 @@ public class GripCoreModule extends AbstractModule {
     install(new FactoryModuleBuilder()
         .implement(HttpSource.class, HttpSource.class)
         .build(HttpSource.Factory.class));
-    install(new FactoryModuleBuilder()
+    /* install(new FactoryModuleBuilder()
         .implement(NetworkTableEntrySource.class, NetworkTableEntrySource.class)
-        .build(NetworkTableEntrySource.Factory.class));
+        .build(NetworkTableEntrySource.Factory.class)); */
     install(new FactoryModuleBuilder()
         .implement(ClassifierSource.class, ClassifierSource.class)
         .build(ClassifierSource.Factory.class));

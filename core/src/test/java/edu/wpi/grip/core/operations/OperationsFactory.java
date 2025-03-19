@@ -2,7 +2,7 @@ package edu.wpi.grip.core.operations;
 
 
 import edu.wpi.grip.core.FileManager;
-import edu.wpi.grip.core.operations.network.MapNetworkPublisherFactory;
+//import edu.wpi.grip.core.operations.network.MapNetworkPublisherFactory;
 import edu.wpi.grip.core.operations.network.MockMapNetworkPublisher;
 import edu.wpi.grip.core.operations.network.ros.JavaToMessageConverter;
 import edu.wpi.grip.core.operations.network.ros.ROSMessagePublisher;
@@ -30,13 +30,13 @@ public class OperationsFactory {
   }
 
   public static Operations create(EventBus eventBus,
-                                  MapNetworkPublisherFactory mapFactory,
-                                  MapNetworkPublisherFactory httpFactory,
+                                  //MapNetworkPublisherFactory mapFactory,
+                                  //MapNetworkPublisherFactory httpFactory,
                                   ROSNetworkPublisherFactory rosFactory,
                                   FileManager fileManager,
                                   InputSocket.Factory isf,
                                   OutputSocket.Factory osf) {
-    return new Operations(eventBus, mapFactory, httpFactory, rosFactory, fileManager, isf, osf);
+    return new Operations(eventBus, rosFactory, fileManager, isf, osf);
   }
 
   public static CVOperations createCV(EventBus eventBus) {

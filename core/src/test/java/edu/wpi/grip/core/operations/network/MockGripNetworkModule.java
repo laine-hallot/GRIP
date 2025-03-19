@@ -22,8 +22,8 @@ public final class MockGripNetworkModule extends AbstractModule {
         .annotatedWith(Names.named("rosManager"))
         .to(MockROSManager.class);
 
-    bind(MapNetworkReceiverFactory.class)
+    /* bind(MapNetworkReceiverFactory.class)
         .annotatedWith(Names.named("ntManager"))
-        .to(MockNetworkReceiver.class);
+        .to(MockNetworkReceiver.class); */
   }
 }

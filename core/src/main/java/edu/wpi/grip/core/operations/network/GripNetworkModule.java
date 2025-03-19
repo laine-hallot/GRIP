@@ -4,7 +4,7 @@ import edu.wpi.grip.core.http.GripServer;
 import edu.wpi.grip.core.http.HttpPipelineSwitcher;
 import edu.wpi.grip.core.operations.network.http.DataHandler;
 import edu.wpi.grip.core.operations.network.http.HttpPublishManager;
-import edu.wpi.grip.core.operations.network.networktables.NTManager;
+//import edu.wpi.grip.core.operations.network.networktables.NTManager;
 import edu.wpi.grip.core.operations.network.ros.ROSManager;
 import edu.wpi.grip.core.operations.network.ros.ROSNetworkPublisherFactory;
 
@@ -25,9 +25,9 @@ public final class GripNetworkModule extends AbstractModule {
     bind(HttpPipelineSwitcher.class).asEagerSingleton();
     bind(DataHandler.class).asEagerSingleton();
     // Network publishing bindings
-    bind(MapNetworkPublisherFactory.class)
+    /* bind(MapNetworkPublisherFactory.class)
         .annotatedWith(Names.named("ntManager"))
-        .to(NTManager.class);
+        .to(NTManager.class); */
     bind(MapNetworkPublisherFactory.class)
         .annotatedWith(Names.named("httpManager"))
         .to(HttpPublishManager.class);
@@ -36,8 +36,8 @@ public final class GripNetworkModule extends AbstractModule {
         .to(ROSManager.class);
 
     // Network receiver bindings
-    bind(MapNetworkReceiverFactory.class)
+    /* bind(MapNetworkReceiverFactory.class)
         .annotatedWith(Names.named("ntManager"))
-        .to(NTManager.class);
+        .to(NTManager.class); */
   }
 }
